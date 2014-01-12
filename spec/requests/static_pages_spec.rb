@@ -13,7 +13,7 @@ describe "Static pages" do
     before { visit root_path }
     let(:page_title) { 'Home' }
 
-    it_should_behave_like "all static pages"
+    
     it { should_not have_selector('title', text: "| Home" )}
   end
 
