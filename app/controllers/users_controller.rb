@@ -8,7 +8,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    if signed_in?
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
   end
   
   def create
