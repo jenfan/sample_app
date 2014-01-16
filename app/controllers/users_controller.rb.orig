@@ -1,25 +1,23 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   def index
     @user = current_user
   end
+=======
+>>>>>>> master
   def show
   	@user = User.find(params[:id])
   end
-
   def new
   	@user = User.new
   end
-
-  def edit
-    if signed_in?
-      @user = current_user
-    else
-      @user = User.find(params[:id])
-    end
-  end
   
   def create
+<<<<<<< HEAD
     @user = User.new(user_params)
+=======
+    @user = User.new(params[:user])
+>>>>>>> master
     if @user.save
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
